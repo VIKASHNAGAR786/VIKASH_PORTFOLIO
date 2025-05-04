@@ -1,0 +1,37 @@
+/* Navbar Styling */
+.navbar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Navbar items */
+  .nav-item .nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .nav-item .nav-link:hover {
+    color: #007bff;
+  }
+  
+  /* Mobile menu styles */
+  .navbar-toggler {
+    border: none;
+  }
+  
+  .navbar-collapse {
+    text-align: right;
+  }
+  
+  /* On small screens, we display the menu */
+  @media (max-width: 767px) {
+    .navbar-collapse {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .navbar-collapse .nav-item {
+      margin-top: 10px;
+    }
+  }
+  

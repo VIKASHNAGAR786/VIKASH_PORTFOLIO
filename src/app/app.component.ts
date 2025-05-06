@@ -16,8 +16,8 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
   <!-- Footer -->
   <footer class="bg-success text-white text-center py-3">
     <div class="container">
-      <p class="mb-1">🌱 <strong>AgriMandi</strong> - Empowering Farmers with Technology</p>
-      <p class="mb-0">&copy; {{ currentYear }} AgriMandi. All rights reserved.</p>
+      <p class="mb-1">🌱 <strong>Vikash Nagar</strong> - Software Developer</p>
+      <p class="mb-0">&copy; {{ currentYear }} vikash. All rights reserved.</p>
     </div>
   </footer>
 `,
@@ -28,5 +28,5 @@ export class AppComponent {
   title = 'portfolio';
   currentYear: number = new Date().getFullYear();
 }
-// 
-// ng build --configuration production --base-href /ANGULAR_PORTFOLIO/
+// https://vikashnagar786.github.io/VIKASH_PORTFOLIO/
+// ng build --configuration production --base-href /VIKASH_PORTFOLIO/

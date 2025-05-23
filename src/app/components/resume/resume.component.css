@@ -1,21 +1,118 @@
-.resume-container {
-    padding-top: 80px; /* To account for fixed navbar */
+/* .resume-container { */
+    /* padding-top: 80px; To account for fixed navbar */
+  /* } */
+
+  /* h2, h4 { */
+    /* font-weight: 700; */
+  /* } */
+
+  /* section h5 { */
+    /* font-weight: 600; */
+  /* } */
+
+  /* @media (max-width: 576px) { */
+    /* .list-inline-item { */
+      /* display: block; */
+      /* margin-bottom: 0.5rem; */
+    /* } */
+    /* .text-center.mb-4 p { */
+      /* font-size: 0.9rem; */
+    /* } */
+  /* } */
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9fafc;
+    color: #333;
+    line-height: 1.6;
   }
 
-  h2, h4 {
+  h1.display-3 {
     font-weight: 700;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   }
 
-  section h5 {
-    font-weight: 600;
+  .lead a {
+    color: #0d6efd;
+    transition: all 0.3s ease;
   }
 
-  @media (max-width: 576px) {
-    .list-inline-item {
-      display: block;
-      margin-bottom: 0.5rem;
+  .lead a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+  .text-uppercase {
+    letter-spacing: 1px;
+  }
+
+  h3.section-title, .fw-semibold {
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  h3.section-title:hover, .fw-semibold:hover {
+    color: #0d6efd;
+  }
+
+  .section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 60px;
+    height: 3px;
+    background: #0d6efd;
+    border-radius: 5px;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  ul li {
+    margin-bottom: 6px;
+  }
+
+  .card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .mb-4 h5.fw-bold {
+    color: #2c3e50;
+  }
+
+  .progress {
+    height: 18px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    background-color: #0d6efd;
+    transition: width 0.6s ease;
+  }
+
+  .text-muted {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    h1.display-3 {
+      font-size: 2.5rem;
     }
-    .text-center.mb-4 p {
-      font-size: 0.9rem;
+    .lead {
+      font-size: 1rem;
+    }
+    .card {
+      padding: 15px;
     }
   }

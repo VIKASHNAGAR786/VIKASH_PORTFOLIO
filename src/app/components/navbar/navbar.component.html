@@ -1,30 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <!-- Brand -->
-      <a class="navbar-brand" href="#"><strong>Vikash Nagar</strong></a>
-  
-      <!-- Mobile toggle button -->
-      <button class="navbar-toggler" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen ? 'true' : 'false'" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<!-- Sidebar and Dashboard Layout -->
+<div class="d-flex">
+  <!-- Sidebar -->
+  <nav
+    class="sidebar vh-100 bg-white shadow-sm d-flex flex-column"
+    [ngClass]="{ collapsed: !isSidebarOpen }"
+  >
+    <!-- Sidebar Header -->
+    <div class="d-flex align-items-center justify-content-between p-3 border-bottom">
+      <span class="fw-bold fs-5" *ngIf="isSidebarOpen">Pages</span>
+      <button class="btn btn-sm btn-light" (click)="toggleSidebar()">
+        <i class="bi" [ngClass]="isSidebarOpen ? 'bi-chevron-left' : 'bi-list'"></i>
       </button>
-  
-      <!-- Links (This will be shown/hidden based on screen size and toggle) -->
-      <div [ngClass]="{'collapse': !isMenuOpen, 'navbar-collapse': true}">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
     </div>
+
+    <!-- Sidebar Nav -->
+    <ul class="nav flex-column px-2 mt-3">
+      <li class="nav-item" *ngFor="let item of sidebarItems">
+        <a
+          class="nav-link d-flex align-items-center px-3 py-2 rounded"
+          [ngClass]="{ active: activePage === item.id }"
+          [attr.title]="!isSidebarOpen ? item.label : null"
+          [routerLink]="['/' + item.id]"
+          (click)="setActivePage(item.id)"
+        >
+          <i class="bi me-2" [ngClass]="item.icon"></i>
+          <span *ngIf="isSidebarOpen">{{ item.label }}</span>
+        </a>
+      </li>
+    </ul>
   </nav>
-  
+
+  <!-- Main Content -->
+  <div
+    class="main-content p-4"
+    [ngClass]="{ collapsed: !isSidebarOpen }"
+  >
+    <router-outlet></router-outlet>
+  </div>
+</div>

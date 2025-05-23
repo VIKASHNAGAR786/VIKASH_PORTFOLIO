@@ -1,0 +1,21 @@
+.resume-container {
+    padding-top: 80px; /* To account for fixed navbar */
+  }
+
+  h2, h4 {
+    font-weight: 700;
+  }
+
+  section h5 {
+    font-weight: 600;
+  }
+
+  @media (max-width: 576px) {
+    .list-inline-item {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .text-center.mb-4 p {
+      font-size: 0.9rem;
+    }
+  }

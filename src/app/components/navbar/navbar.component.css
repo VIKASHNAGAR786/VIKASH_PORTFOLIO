@@ -1,37 +1,122 @@
-/* Navbar Styling */
-.navbar {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Sidebar Base */
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  overflow-x: hidden;
+  background: #463a3a2c;
+  border-right: 1px solid #e0e0e0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  position: fixed;
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* Sidebar Header */
+.sidebar .sidebar-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Navigation Links */
+.sidebar .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.95rem;
+  color: #495057;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* On Hover */
+.sidebar .nav-link:hover {
+  background-color: #f1f3f5;
+  color: #212529;
+  font-weight: 500;
+}
+
+/* Active Link */
+.sidebar .nav-link.active {
+  background-color: #e9ecef;
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* Icon Sizing */
+.sidebar .bi {
+  font-size: 1.2rem;
+}
+
+/* Hide labels when collapsed */
+.sidebar.collapsed .nav-link span {
+  display: none;
+}
+
+/* Optional Tooltip Styles */
+.sidebar.collapsed .nav-link {
+  position: relative;
+}
+
+.sidebar.collapsed .nav-link:hover::after {
+  content: attr(title);
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #343a40;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  margin-left: 10px;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  z-index: 1001;
+}
+
+/* Transition for Main Content Padding (optional) */
+.main-content {
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed + .main-content {
+  margin-left: 80px;
+}
+
+.sidebar + .main-content {
+  margin-left: 250px;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    height: 100%;
+    z-index: 1050;
   }
-  
-  /* Navbar items */
-  .nav-item .nav-link {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #333;
+
+  .main-content {
+    margin-left: 0 !important;
   }
-  
-  .nav-item .nav-link:hover {
-    color: #007bff;
+
+  .sidebar.collapsed {
+    transform: translateX(-100%);
   }
-  
-  /* Mobile menu styles */
-  .navbar-toggler {
-    border: none;
+
+  .sidebar:not(.collapsed) {
+    transform: translateX(0);
   }
-  
-  .navbar-collapse {
-    text-align: right;
+
+  .sidebar,
+  .main-content {
+    transition: transform 0.3s ease, margin-left 0.3s ease;
   }
-  
-  /* On small screens, we display the menu */
-  @media (max-width: 767px) {
-    .navbar-collapse {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .navbar-collapse .nav-item {
-      margin-top: 10px;
-    }
-  }
-  
+}

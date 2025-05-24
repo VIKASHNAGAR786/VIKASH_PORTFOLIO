@@ -21,7 +21,8 @@
             "assets": [
               {
                 "glob": "web.config",
-                "input": "public"
+                "input": "public",
+                "output": ""
               }
             ],
             "styles": [

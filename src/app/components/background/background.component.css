@@ -1,0 +1,27 @@
+/* Particle container covers the entire viewport */
+.particles-container {
+  position: fixed;       /* Stays fixed on screen */
+  top: 0;                /* Align to top */
+  left: 0;               /* Align to left */
+  width: 100vw;          /* Full viewport width */
+  height: 100vh;         /* Full viewport height */
+  z-index: -9999;        /* Far behind everything */
+  pointer-events: none;  /* Clicks pass through */
+  background-color: #0f172a; /* Dark fallback background */
+
+  /* Smooth animations */
+  will-change: transform, opacity;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Optional: Prevent scrollbars from showing */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+  background-color: #0f172a;
+}

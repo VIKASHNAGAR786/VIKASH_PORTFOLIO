@@ -12,14 +12,14 @@
 <div class="d-flex">
   <!-- Sidebar -->
   <nav
-    class="sidebar bg-white shadow-sm d-flex flex-column position-fixed vh-100"
+    class="sidebar d-flex flex-column position-fixed vh-100"
     [ngClass]="{ collapsed: !isSidebarOpen }"
     role="navigation"
     aria-label="Sidebar Navigation"
   >
     <!-- Sidebar Header -->
-    <div class="d-flex align-items-center justify-content-between p-3 border-bottom">
-      <span class="fw-bold fs-5" *ngIf="isSidebarOpen">Pages</span>
+    <div class="d-flex align-items-center justify-content-between sidebar-header">
+      <span class="fw-bold fs-5" *ngIf="isSidebarOpen">Vikash</span>
       <button
         class="btn btn-sm btn-light"
         (click)="toggleSidebar()"

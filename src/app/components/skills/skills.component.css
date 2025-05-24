@@ -1,0 +1,42 @@
+.container {
+  backdrop-filter: blur(12px);
+  background: rgba(20, 20, 25, 0.6); /* dark translucent background */
+  border-radius: 1.2rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+}
+
+.skill-card {
+  background: #1f2233; /* deep navy/blue-black */
+  border-radius: 1rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.75);
+}
+
+.card-title {
+  font-size: 1.3rem;
+  color: #ffbb33; /* warmer yellow for emphasis */
+}
+
+ul li {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ddd;
+  transition: color 0.25s ease;
+  cursor: default;
+}
+
+ul li i {
+  color: #28a745; /* bright green check icon */
+}
+
+ul li:hover {
+  color: #ffbb33; /* highlight skill text on hover */
+  transform: scale(1.05);
+  transition: color 0.25s ease, transform 0.25s ease;
+}

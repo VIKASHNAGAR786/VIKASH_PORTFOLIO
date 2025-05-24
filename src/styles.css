@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+/* Ensure full height and no margin/padding on body and html */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* avoid horizontal scrollbar */
+  background-color: #0f172a; /* fallback background */
+}
+
+/* Make sure your app root uses full height */
+:host, app-root {
+  display: block;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+}

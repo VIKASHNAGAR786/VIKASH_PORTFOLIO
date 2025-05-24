@@ -1,118 +1,82 @@
-/* .resume-container { */
-    /* padding-top: 80px; To account for fixed navbar */
-  /* } */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f172a;        /* dark background matching particles */
+  color: #e1e1e1;             /* light gray/white text for readability */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
 
-  /* h2, h4 { */
-    /* font-weight: 700; */
-  /* } */
+/* Headings */
+h1.display-3 {
+  font-weight: 700;
+  color: #ffffff;             /* pure white for main heading */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* subtle shadow for clarity */
+}
 
-  /* section h5 { */
-    /* font-weight: 600; */
-  /* } */
+.lead a {
+  color: #82aaff;             /* softer blue for links */
+  transition: all 0.3s ease;
+}
 
-  /* @media (max-width: 576px) { */
-    /* .list-inline-item { */
-      /* display: block; */
-      /* margin-bottom: 0.5rem; */
-    /* } */
-    /* .text-center.mb-4 p { */
-      /* font-size: 0.9rem; */
-    /* } */
-  /* } */
+.lead a:hover {
+  color: #1c54b2;             /* darker blue on hover */
+  text-decoration: underline;
+}
 
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f9fafc;
-    color: #333;
-    line-height: 1.6;
-  }
+.text-uppercase {
+  letter-spacing: 1px;
+  color: #ffffff;
+}
 
+h3.border-bottom {
+  color: #ffffff;
+  border-color: #3b82f6;      /* bright blue border for section headers */
+}
+
+h3.border-bottom.pb-2.text-uppercase.fw-semibold:hover {
+  color: #82aaff;
+  cursor: pointer;
+}
+
+/* Subheadings in Experience, Projects, etc. */
+.mb-4 h5.fw-bold {
+  color: #eaeaea;
+}
+
+/* Paragraph text */
+p, ul li {
+  color: #d4d4d4;
+}
+
+/* Links in the content */
+a {
+  color: #82aaff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1c54b2;
+  text-decoration: underline;
+}
+
+/* Muted text */
+.text-muted {
+  color: #9ca3af; /* lighter gray for less emphasis */
+  font-size: 0.9rem;
+}
+
+/* Adjust the container background to be transparent */
+.container {
+  background: transparent;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
   h1.display-3 {
-    font-weight: 700;
-    color: #2c3e50;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-size: 2.5rem;
   }
-
-  .lead a {
-    color: #0d6efd;
-    transition: all 0.3s ease;
+  .lead {
+    font-size: 1rem;
   }
-
-  .lead a:hover {
-    color: #0056b3;
-    text-decoration: underline;
-  }
-
-  .text-uppercase {
-    letter-spacing: 1px;
-  }
-
-  h3.section-title, .fw-semibold {
-    position: relative;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-
-  h3.section-title:hover, .fw-semibold:hover {
-    color: #0d6efd;
-  }
-
-  .section-title::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 60px;
-    height: 3px;
-    background: #0d6efd;
-    border-radius: 5px;
-  }
-
-  ul {
-    padding-left: 20px;
-  }
-
-  ul li {
-    margin-bottom: 6px;
-  }
-
-  .card {
-    background-color: #ffffff;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-
-  .mb-4 h5.fw-bold {
-    color: #2c3e50;
-  }
-
-  .progress {
-    height: 18px;
-    background-color: #e9ecef;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .progress-bar {
-    background-color: #0d6efd;
-    transition: width 0.6s ease;
-  }
-
-  .text-muted {
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: 768px) {
-    h1.display-3 {
-      font-size: 2.5rem;
-    }
-    .lead {
-      font-size: 1rem;
-    }
-    .card {
-      padding: 15px;
-    }
-  }
+}

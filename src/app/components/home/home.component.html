@@ -1,44 +1,374 @@
 <!-- Main Content -->
 <div class="flex-grow-1 p-4 main-content text-white" style="background-color: transparent;">
-  <div class="mb-4">
-    <h1 class="fw-bold mb-2">👋 Hello, I'm Vikash Nagar</h1>
-    <h5 class="text-light mb-3">Full Stack Developer | Cloud Enthusiast | Tech Educator</h5>
-    <p>
-      I'm a passionate developer with hands-on experience in building scalable web apps using modern technologies
-      like <strong>.NET, Angular, Python, Salesforce, and Cloud platforms</strong>. I love solving real-world problems
-      and
-      sharing my knowledge through my YouTube channel <strong>"largecoder"</strong>.
+  <!-- Animated Header Section -->
+  <div class="mb-5 animate-fade-in">
+    <div class="d-flex align-items-center mb-3">
+      <div class="profile-icon-container me-3">
+        <div class="profile-icon">VN</div>
+      </div>
+      <div>
+        <h1 class="fw-bold mb-1 display-5 gradient-text">👋 Hello, I'm <span class="highlight-text">Vikash Nagar</span></h1>
+        <div class="typewriter-container">
+          <h5 class="text-light mb-3 typewriter-text">Full Stack Developer | Cloud Enthusiast | Tech Educator</h5>
+        </div>
+      </div>
+    </div>
+    
+    <p class="lead mb-4" style="max-width: 800px;">
+      I'm a passionate <span class="highlight">developer</span> with hands-on experience in building <span class="highlight">scalable web applications</span> using modern technologies like <strong>.NET, Angular, Python, Salesforce, and Cloud platforms</strong>. I love solving real-world problems and sharing my knowledge through my YouTube channel <strong>"largecoder"</strong>.
     </p>
+    
     <!-- Action Buttons -->
-    <div class="mt-4">
-      <a href="#projects" class="btn btn-primary me-2">
-        🚀 View Projects
+    <div class="mt-4 d-flex flex-wrap gap-3">
+      <a href="#projects" class="btn btn-primary btn-lg me-2 glow-button">
+        <span class="btn-icon">🚀</span> View Projects
       </a>
-      <a href="assets/Vikash-Nagar-Resume.pdf" target="_blank" class="btn btn-outline-light">
-        📄 Download Resume
+      <a href="assets/Vikash-Nagar-Resume.pdf" target="_blank" class="btn btn-outline-light btn-lg glow-button">
+        <span class="btn-icon">📄</span> Download Resume
+      </a>
+      <a href="https://youtube.com/largecoder" target="_blank" class="btn btn-danger btn-lg glow-button">
+        <span class="btn-icon">▶️</span> Visit YouTube
+      </a>
+      <a href="#contact" class="btn btn-success btn-lg glow-button">
+        <span class="btn-icon">📧</span> Contact Me
       </a>
     </div>
   </div>
 
-  <!-- Quick Stats or Skills Summary -->
-  <div class="row mt-5">
-    <div class="col-md-4 mb-3">
-      <div class="p-3 border rounded shadow-sm text-center text-white" style="background-color: transparent;">
-        <h5>🌐 Web Technologies</h5>
-        <p class="text-light">HTML, CSS, JS, Angular, ASP.NET</p>
+  <!-- Stats Section -->
+  <div class="row mb-5 animate-slide-up">
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="p-4 border rounded shadow stats-card text-center">
+        <h2 class="fw-bold stats-number">3+</h2>
+        <p class="mb-0 text-light">Years Experience</p>
       </div>
     </div>
-    <div class="col-md-4 mb-3">
-      <div class="p-3 border rounded shadow-sm text-center text-white" style="background-color: transparent;">
-        <h5>☁️ Cloud Tools</h5>
-        <p class="text-light">Salesforce, Azure, Firebase, GitHub Actions</p>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="p-4 border rounded shadow stats-card text-center">
+        <h2 class="fw-bold stats-number">50+</h2>
+        <p class="mb-0 text-light">Projects Completed</p>
       </div>
     </div>
-    <div class="col-md-4 mb-3">
-      <div class="p-3 border rounded shadow-sm text-center text-white" style="background-color: transparent;">
-        <h5>🎯 Focus</h5>
-        <p class="text-light">Clean Code, Problem Solving, User Experience</p>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="p-4 border rounded shadow stats-card text-center">
+        <h2 class="fw-bold stats-number">5k+</h2>
+        <p class="mb-0 text-light">YouTube Subscribers</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="p-4 border rounded shadow stats-card text-center">
+        <h2 class="fw-bold stats-number">10+</h2>
+        <p class="mb-0 text-light">Tech Stacks</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skills Summary -->
+  <div class="row mt-5 animate-slide-up" style="animation-delay: 0.2s;">
+    <div class="col-md-4 mb-4">
+      <div class="p-4 border rounded shadow-sm skill-card h-100">
+        <div class="skill-icon mb-3">🌐</div>
+        <h4 class="fw-bold">Web Technologies</h4>
+        <p class="text-light mb-3">HTML, CSS, JavaScript, TypeScript, Angular, React, ASP.NET</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Frontend</span>
+          <span class="skill-tag">Backend</span>
+          <span class="skill-tag">Full Stack</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="p-4 border rounded shadow-sm skill-card h-100">
+        <div class="skill-icon mb-3">☁️</div>
+        <h4 class="fw-bold">Cloud & DevOps</h4>
+        <p class="text-light mb-3">Salesforce, Azure, AWS, Firebase, GitHub Actions, Docker</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Cloud</span>
+          <span class="skill-tag">DevOps</span>
+          <span class="skill-tag">CI/CD</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="p-4 border rounded shadow-sm skill-card h-100">
+        <div class="skill-icon mb-3">🎯</div>
+        <h4 class="fw-bold">Development Focus</h4>
+        <p class="text-light mb-3">Clean Code, Problem Solving, User Experience, Performance Optimization</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Best Practices</span>
+          <span class="skill-tag">UX/UI</span>
+          <span class="skill-tag">Optimization</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Currently Working On -->
+  <div class="mt-5 p-4 border rounded shadow-sm currently-working animate-fade-in" style="animation-delay: 0.4s;">
+    <h4 class="fw-bold mb-3">🛠️ Currently Working On</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="text-light">
+          <li>Building scalable microservices with .NET Core</li>
+          <li>Creating YouTube tutorials for Angular developers</li>
+          <li>Exploring Salesforce LWC (Lightning Web Components)</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul class="text-light">
+          <li>Learning advanced Azure cloud services</li>
+          <li>Developing a portfolio management application</li>
+          <li>Contributing to open-source projects</li>
+        </ul>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Add this CSS to your stylesheet -->
+<style>
+  /* Custom Styles for Enhanced Home Component */
+  .gradient-text {
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .highlight-text {
+    color: #00f2fe;
+    position: relative;
+  }
+  
+  .highlight-text::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 242, 254, 0.3);
+    z-index: -1;
+  }
+  
+  .highlight {
+    color: #4facfe;
+    font-weight: 600;
+  }
+  
+  .profile-icon-container {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .profile-icon {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .glow-button {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .glow-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn-icon {
+    margin-right: 8px;
+  }
+  
+  .stats-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: transform 0.3s ease;
+  }
+  
+  .stats-card:hover {
+    transform: translateY(-5px);
+    border-color: #4facfe !important;
+  }
+  
+  .stats-number {
+    font-size: 2.5rem;
+    color: #00f2fe;
+  }
+  
+  .skill-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease;
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #4facfe !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .skill-icon {
+    font-size: 2.5rem;
+  }
+  
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .skill-tag {
+    background: rgba(79, 172, 254, 0.2);
+    color: #4facfe;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+  }
+  
+  .currently-working {
+    background: rgba(79, 172, 254, 0.1);
+    border: 1px solid rgba(79, 172, 254, 0.3) !important;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease forwards;
+  }
+  
+  .typewriter-container {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .typewriter-text {
+    display: inline-block;
+    overflow: hidden;
+    animation: typewriter 3s steps(40) 1s 1 normal both;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .profile-icon-container {
+      width: 60px;
+      height: 60px;
+    }
+    
+    h1.display-5 {
+      font-size: 2.2rem;
+    }
+    
+    .stats-number {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+<!-- Optional: Add this script for interactive elements -->
+<script>
+  // Simple script to add interactive hover effects
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add ripple effect to buttons
+    const buttons = document.querySelectorAll('.glow-button');
+    buttons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.cssText = `
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.7);
+          transform: scale(0);
+          animation: ripple-animation 0.6s linear;
+          width: ${size}px;
+          height: ${size}px;
+          top: ${y}px;
+          left: ${x}px;
+          pointer-events: none;
+        `;
+        
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+      });
+    });
+    
+    // Add animation for stats counter (optional)
+    const statsElements = document.querySelectorAll('.stats-number');
+    const observerOptions = {
+      threshold: 0.5
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const element = entry.target;
+          const targetValue = parseInt(element.textContent);
+          if (!element.hasAttribute('data-animated')) {
+            animateCounter(element, targetValue);
+            element.setAttribute('data-animated', 'true');
+          }
+        }
+      });
+    }, observerOptions);
+    
+    statsElements.forEach(element => observer.observe(element));
+    
+    function animateCounter(element, target) {
+      let current = 0;
+      const increment = target / 50;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.textContent = target + '+';
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(current) + '+';
+        }
+      }, 30);
+    }
+  });
+  
+  // Add CSS for ripple animation
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes ripple-animation {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+</script>

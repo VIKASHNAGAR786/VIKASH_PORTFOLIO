@@ -1,106 +1,866 @@
 <!-- Projects Section -->
-<div class="container my-5">
-  <h2 class="fw-bold mb-5 text-center text-white">
-    <i class="bi bi-layers me-2"></i>My Projects
-  </h2>
-
-  <div class="accordion" id="projectAccordion"
-    style="background: linear-gradient(to bottom right, #1f1f1f, #2a2a2a); border-radius: 1rem; border: 1px solid #333; box-shadow: 0 4px 20px rgba(0,0,0,0.6);">
-
-    <!-- Project Template -->
-    <div class="accordion-item bg-transparent border-bottom border-secondary">
-      <h2 class="accordion-header" id="headingAgriMandi">
-        <button class="accordion-button collapsed text-white fw-semibold"
-          style="background-color: #212529;" type="button" data-bs-toggle="collapse"
-          data-bs-target="#collapseAgriMandi" aria-expanded="false" aria-controls="collapseAgriMandi">
-          🌾 AgriMandi Platform
-        </button>
-      </h2>
-      <div id="collapseAgriMandi" class="accordion-collapse collapse" aria-labelledby="headingAgriMandi"
-        data-bs-parent="#projectAccordion">
-        <div class="accordion-body text-light">
-          A web-based platform connecting farmers and buyers. Built with
-          <strong class="text-warning">.NET, Angular, and MS SQL</strong>. Features crop listing, bidding,
-          messaging, and secure role-based access for farmers and buyers.
+<div class="projects-container">
+  <!-- Hero Section -->
+  <div class="projects-hero text-center py-5 mb-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-3 gradient-text">
+        <i class="bi bi-rocket-takeoff-fill me-3"></i>Project Portfolio
+      </h1>
+      <p class="lead mb-4" style="max-width: 800px; margin: 0 auto;">
+        From enterprise solutions to innovative prototypes. Each project represents a unique challenge solved with 
+        cutting-edge technology and user-centric design.
+      </p>
+      
+      <!-- Project Stats -->
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="stat-card text-center p-4">
+            <div class="stat-number">12+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="stat-card text-center p-4">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="stat-card text-center p-4">
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Tech Stacks Used</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="stat-card text-center p-4">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Leaf Disease Detection -->
-    <div class="accordion-item bg-transparent border-bottom border-secondary">
-      <h2 class="accordion-header" id="headingLeaf">
-        <button class="accordion-button collapsed text-white fw-semibold"
-          style="background-color: #212529;" type="button" data-bs-toggle="collapse"
-          data-bs-target="#collapseLeaf" aria-expanded="false" aria-controls="collapseLeaf">
-          🍃 Leaf Disease Detection
-        </button>
-      </h2>
-      <div id="collapseLeaf" class="accordion-collapse collapse" aria-labelledby="headingLeaf"
-        data-bs-parent="#projectAccordion">
-        <div class="accordion-body text-light">
-          A machine learning tool that identifies plant leaf diseases via image classification using
-          <strong class="text-warning">Python, OpenCV, and TensorFlow</strong>. Deployed in a responsive web app
-          for real-time diagnosis.
-        </div>
+  <!-- Filter Tabs -->
+  <div class="container mb-5">
+    <div class="project-filters text-center mb-5">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="client">Client Projects</button>
+        <button class="filter-btn" data-filter="personal">Personal Projects</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="ai">AI/ML</button>
       </div>
     </div>
 
-    <!-- College Management System -->
-    <div class="accordion-item bg-transparent border-bottom border-secondary">
-      <h2 class="accordion-header" id="headingCMS">
-        <button class="accordion-button collapsed text-white fw-semibold"
-          style="background-color: #212529;" type="button" data-bs-toggle="collapse"
-          data-bs-target="#collapseCMS" aria-expanded="false" aria-controls="collapseCMS">
-          🏫 College Management System
-        </button>
-      </h2>
-      <div id="collapseCMS" class="accordion-collapse collapse" aria-labelledby="headingCMS"
-        data-bs-parent="#projectAccordion">
-        <div class="accordion-body text-light">
-          A robust full-stack system built with
-          <strong class="text-warning">Java, JSP, and MySQL</strong>. Manages student profiles, attendance,
-          results, and staff records with secure role-based access.
+    <!-- Featured Projects (Card Layout) -->
+    <div class="row g-4 project-grid">
+      <!-- FlexiERP Project -->
+      <div class="col-lg-6" data-category="client web">
+        <div class="project-card featured">
+          <div class="project-badge">Client Project</div>
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="bi bi-building"></i>
+            </div>
+            <h3 class="project-title">FlexiERP</h3>
+            <span class="project-tag">Enterprise Solution</span>
+          </div>
+          <div class="project-body">
+            <p class="project-description">
+              A comprehensive business management suite designed for MSMEs. Handles inventory, billing, CRM, 
+              reporting, and payroll in one integrated platform.
+            </p>
+            
+            <div class="tech-stack">
+              <span class="tech-tag">.NET 8</span>
+              <span class="tech-tag">Angular</span>
+              <span class="tech-tag">MSSQL</span>
+              <span class="tech-tag">Azure</span>
+              <span class="tech-tag">EF Core</span>
+            </div>
+            
+            <div class="project-features">
+              <h6><i class="bi bi-check-circle-fill me-2"></i>Key Features:</h6>
+              <ul>
+                <li>Role-based access (Admin, Manager, Employee)</li>
+                <li>Real-time inventory tracking with low-stock alerts</li>
+                <li>GST-compliant invoicing & billing system</li>
+                <li>Automated payroll and attendance management</li>
+                <li>Interactive dashboards with analytics</li>
+                <li>Mobile-responsive admin panel</li>
+              </ul>
+            </div>
+            
+            <div class="project-stats">
+              <div class="stat">
+                <i class="bi bi-calendar-week"></i>
+                <span>3 Months Development</span>
+              </div>
+              <div class="stat">
+                <i class="bi bi-people"></i>
+                <span>5,000+ Users</span>
+              </div>
+              <div class="stat">
+                <i class="bi bi-graph-up"></i>
+                <span>30% Efficiency Boost</span>
+              </div>
+            </div>
+            
+            <div class="project-footer">
+              <span class="project-status completed">
+                <i class="bi bi-check-circle"></i> Live & Generating Revenue
+              </span>
+              <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#flexierpModal">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AgriMandi Platform -->
+      <div class="col-lg-6" data-category="personal web">
+        <div class="project-card">
+          <div class="project-badge">Featured Project</div>
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="bi bi-shop"></i>
+            </div>
+            <h3 class="project-title">AgriMandi Platform</h3>
+            <span class="project-tag">Farmers Marketplace</span>
+          </div>
+          <div class="project-body">
+            <p class="project-description">
+              A digital marketplace connecting farmers directly with buyers, eliminating middlemen and 
+              ensuring fair pricing for agricultural produce.
+            </p>
+            
+            <div class="tech-stack">
+              <span class="tech-tag">ASP.NET Core</span>
+              <span class="tech-tag">Angular</span>
+              <span class="tech-tag">SQL Server</span>
+              <span class="tech-tag">Azure</span>
+              <span class="tech-tag">JWT Auth</span>
+            </div>
+            
+            <div class="project-features">
+              <h6><i class="bi bi-check-circle-fill me-2"></i>Key Features:</h6>
+              <ul>
+                <li>Live crop listing with image upload</li>
+                <li>Bidding system for price negotiation</li>
+                <li>In-app messaging between farmers & buyers</li>
+                <li>Payment gateway integration</li>
+                <li>Delivery tracking system</li>
+                <li>Weather-based crop suggestions</li>
+              </ul>
+            </div>
+            
+            <div class="project-footer">
+              <span class="project-status live">
+                <i class="bi bi-play-circle"></i> Live on Azure
+              </span>
+              <a href="#" class="btn btn-outline-success btn-sm">
+                <i class="bi bi-box-arrow-up-right"></i> Visit Site
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- College Management System -->
+      <div class="col-lg-6" data-category="personal web">
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="bi bi-mortarboard"></i>
+            </div>
+            <h3 class="project-title">College Management System</h3>
+            <span class="project-tag">Education ERP</span>
+          </div>
+          <div class="project-body">
+            <p class="project-description">
+              A complete college administration system automating student lifecycle from admission to graduation.
+            </p>
+            
+            <div class="tech-stack">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">JSP</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Bootstrap</span>
+              <span class="tech-tag">Servlet</span>
+            </div>
+            
+            <div class="project-features">
+              <h6><i class="bi bi-check-circle-fill me-2"></i>Modules Included:</h6>
+              <ul>
+                <li>Student registration and profile management</li>
+                <li>Automated attendance tracking</li>
+                <li>Exam results and grade management</li>
+                <li>Library management system</li>
+                <li>Fee collection and receipts</li>
+                <li>Faculty and timetable management</li>
+              </ul>
+            </div>
+            
+            <div class="project-footer">
+              <span class="project-status completed">
+                <i class="bi bi-check-circle"></i> Implemented in College
+              </span>
+              <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#collegeModal">
+                View Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Point of Sale System -->
+      <div class="col-lg-6" data-category="client web">
+        <div class="project-card">
+          <div class="project-badge">Client Project</div>
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="bi bi-cash-stack"></i>
+            </div>
+            <h3 class="project-title">Retail POS System</h3>
+            <span class="project-tag">Point of Sale</span>
+          </div>
+          <div class="project-body">
+            <p class="project-description">
+              A modern Point of Sale system for retail stores with inventory management, billing, 
+              and customer relationship features.
+            </p>
+            
+            <div class="tech-stack">
+              <span class="tech-tag">.NET Core</span>
+              <span class="tech-tag">Windows Forms</span>
+              <span class="tech-tag">SQL Server</span>
+              <span class="tech-tag">Barcode Scanner</span>
+            </div>
+            
+            <div class="project-features">
+              <h6><i class="bi bi-check-circle-fill me-2"></i>Key Features:</h6>
+              <ul>
+                <li>Quick billing with barcode scanning</li>
+                <li>Inventory management with low-stock alerts</li>
+                <li>Customer loyalty program</li>
+                <li>Sales reports and analytics</li>
+                <li>Multi-store support</li>
+                <li>Offline mode capability</li>
+              </ul>
+            </div>
+            
+            <div class="project-footer">
+              <span class="project-status deployed">
+                <i class="bi bi-gear"></i> Deployed in 3 Stores
+              </span>
+              <span class="revenue-badge">₹70,000+ Revenue</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leaf Disease Detection -->
+      <div class="col-lg-6" data-category="personal ai">
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="bi bi-flower1"></i>
+            </div>
+            <h3 class="project-title">Leaf Disease Detection</h3>
+            <span class="project-tag">AI/ML Solution</span>
+          </div>
+          <div class="project-body">
+            <p class="project-description">
+              An AI-powered system that detects plant diseases from leaf images, helping farmers 
+              take preventive measures early.
+            </p>
+            
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">Flask</span>
+              <span class="tech-tag">React</span>
+            </div>
+            
+            <div class="project-features">
+              <h6><i class="bi bi-check-circle-fill me-2"></i>Capabilities:</h6>
+              <ul>
+                <li>Detects 10+ common crop diseases</li>
+                <li>95% accuracy rate</li>
+                <li>Mobile-friendly web interface</li>
+                <li>Disease prevention tips</li>
+                <li>Real-time image processing</li>
+              </ul>
+            </div>
+            
+            <div class="project-footer">
+              <span class="project-status in-progress">
+                <i class="bi bi-hourglass-split"></i> Model Training
+              </span>
+              <button class="btn btn-outline-warning btn-sm">Try Demo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agri Chatbot Assistant -->
+      <div class="col-lg-6" data-category="personal ai">
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="bi bi-robot"></i>
+            </div>
+            <h3 class="project-title">Agri Chatbot Assistant</h3>
+            <span class="project-tag">AI Chatbot</span>
+          </div>
+          <div class="project-body">
+            <p class="project-description">
+              A multilingual chatbot that answers farmer queries about crops, weather, market prices, 
+              and government schemes.
+            </p>
+            
+            <div class="tech-stack">
+              <span class="tech-tag">Dialogflow</span>
+              <span class="tech-tag">Python Flask</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">REST API</span>
+              <span class="tech-tag">WhatsApp API</span>
+            </div>
+            
+            <div class="project-features">
+              <h6><i class="bi bi-check-circle-fill me-2"></i>Features:</h6>
+              <ul>
+                <li>Supports Hindi & English</li>
+                <li>Real-time weather integration</li>
+                <li>Market price updates</li>
+                <li>Crop advisory based on season</li>
+                <li>WhatsApp integration</li>
+              </ul>
+            </div>
+            
+            <div class="project-footer">
+              <span class="project-status live">
+                <i class="bi bi-play-circle"></i> Active on WhatsApp
+              </span>
+              <button class="btn btn-outline-primary btn-sm">Chat Now</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Portfolio Website -->
-    <div class="accordion-item bg-transparent border-bottom border-secondary">
-      <h2 class="accordion-header" id="headingPortfolio">
-        <button class="accordion-button collapsed text-white fw-semibold"
-          style="background-color: #212529;" type="button" data-bs-toggle="collapse"
-          data-bs-target="#collapsePortfolio" aria-expanded="false" aria-controls="collapsePortfolio">
-          💼 Personal Portfolio Website
-        </button>
+  <!-- Client Testimonials -->
+  <div class="testimonials-section py-5 mt-5">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold text-white">
+        <i class="bi bi-chat-square-quote me-2"></i>What Clients Say
       </h2>
-      <div id="collapsePortfolio" class="accordion-collapse collapse" aria-labelledby="headingPortfolio"
-        data-bs-parent="#projectAccordion">
-        <div class="accordion-body text-light">
-          A personal branding site developed using
-          <strong class="text-warning">HTML, CSS, Bootstrap, and JavaScript</strong>. Highlights projects,
-          skills, and resume with smooth scroll animations and dark/light mode toggle.
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Vikash delivered our FlexiERP system ahead of schedule. The inventory module alone saved us 20 hours weekly!"</p>
+            </div>
+            <div class="client-info">
+              <div class="client-avatar">
+                <i class="bi bi-person-circle"></i>
+              </div>
+              <div>
+                <h6 class="mb-0">Rajesh Gupta</h6>
+                <small class="text-light">Owner, Gupta Traders</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"The POS system transformed our store operations. Easy to use and the support was exceptional."</p>
+            </div>
+            <div class="client-info">
+              <div class="client-avatar">
+                <i class="bi bi-person-circle"></i>
+              </div>
+              <div>
+                <h6 class="mb-0">Priya Sharma</h6>
+                <small class="text-light">Manager, SuperMart</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"College Management System implementation was seamless. Reduced administrative workload by 40%."</p>
+            </div>
+            <div class="client-info">
+              <div class="client-avatar">
+                <i class="bi bi-person-circle"></i>
+              </div>
+              <div>
+                <h6 class="mb-0">Dr. A. Kumar</h6>
+                <small class="text-light">Principal, City College</small>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Agri Chatbot -->
-    <div class="accordion-item bg-transparent">
-      <h2 class="accordion-header" id="headingChatbot">
-        <button class="accordion-button collapsed text-white fw-semibold"
-          style="background-color: #212529;" type="button" data-bs-toggle="collapse"
-          data-bs-target="#collapseChatbot" aria-expanded="false" aria-controls="collapseChatbot">
-          🤖 Agri Chatbot Assistant
-        </button>
-      </h2>
-      <div id="collapseChatbot" class="accordion-collapse collapse" aria-labelledby="headingChatbot"
-        data-bs-parent="#projectAccordion">
-        <div class="accordion-body text-light">
-          A smart chatbot that assists farmers with crop-related queries using
-          <strong class="text-warning">Dialogflow, Python Flask, and Firebase</strong>. Supports multilingual
-          interactions and integrates real-time weather info.
-        </div>
-      </div>
-    </div>
-
   </div>
 </div>
+
+<!-- Modals for Project Details -->
+<div class="modal fade" id="flexierpModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">FlexiERP - Complete Business Suite</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Modal content would go here -->
+        <p>Detailed information about FlexiERP project...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Projects Container */
+  .projects-container {
+    background: transparent;
+    min-height: 100vh;
+    padding-top: 2rem;
+  }
+
+  /* Hero Section */
+  .projects-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+                url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    border-bottom: 3px solid rgba(79, 172, 254, 0.3);
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Filter Buttons */
+  .filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid rgba(79, 172, 254, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    color: #ddd;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+  }
+
+  /* Project Cards */
+  .project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    height: 100%;
+    backdrop-filter: blur(10px);
+  }
+
+  .project-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(79, 172, 254, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .project-card.featured {
+    border: 2px solid #4facfe;
+    background: rgba(79, 172, 254, 0.05);
+  }
+
+  .project-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 1;
+  }
+
+  .project-header {
+    padding: 2rem 2rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .project-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 1.8rem;
+  }
+
+  .project-title {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    color: #4facfe;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+  }
+
+  .project-body {
+    padding: 1.5rem 2rem;
+  }
+
+  .project-description {
+    color: #aaa;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Tech Stack */
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-tag {
+    background: rgba(79, 172, 254, 0.15);
+    color: #4facfe;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(79, 172, 254, 0.3);
+  }
+
+  /* Project Features */
+  .project-features {
+    margin-bottom: 1.5rem;
+  }
+
+  .project-features h6 {
+    color: white;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .project-features ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .project-features li {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .project-features li:before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #4facfe;
+  }
+
+  /* Project Stats */
+  .project-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+
+  .stat i {
+    font-size: 1.2rem;
+    color: #4facfe;
+    margin-bottom: 0.3rem;
+  }
+
+  /* Project Footer */
+  .project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .project-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .project-status.completed {
+    background: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+  }
+
+  .project-status.live {
+    background: rgba(0, 123, 255, 0.2);
+    color: #007bff;
+  }
+
+  .project-status.in-progress {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+  }
+
+  .project-status.deployed {
+    background: rgba(111, 66, 193, 0.2);
+    color: #6f42c1;
+  }
+
+  .revenue-badge {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  /* Testimonials */
+  .testimonials-section {
+    background: rgba(255, 255, 255, 0.03);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100%;
+  }
+
+  .testimonial-content {
+    color: #ddd;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .client-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .client-avatar {
+    width: 50px;
+    height: 50px;
+    background: rgba(79, 172, 254, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #4facfe;
+  }
+
+  /* Stats Cards */
+  .stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-5px);
+    border-color: #4facfe;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4facfe;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+
+  /* Modal */
+  .modal-content {
+    background: #1a1a2e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+
+  .modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .project-card {
+      margin-bottom: 1.5rem;
+    }
+
+    .project-header {
+      padding: 1.5rem 1.5rem 1rem;
+    }
+
+    .project-body {
+      padding: 1.5rem;
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+    }
+
+    .filter-buttons {
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .project-stats {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .projects-hero {
+      padding: 2rem 1rem;
+    }
+
+    .project-header {
+      padding: 1rem;
+    }
+
+    .project-body {
+      padding: 1rem;
+    }
+
+    .tech-tag {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.6rem;
+    }
+  }
+</style>
+
+<script>
+  // Filter functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        const filterValue = this.getAttribute('data-filter');
+        
+        // Show/hide projects based on filter
+        projectCards.forEach(card => {
+          const categories = card.parentElement.getAttribute('data-category');
+          
+          if (filterValue === 'all' || categories.includes(filterValue)) {
+            card.parentElement.style.display = 'block';
+            setTimeout(() => {
+              card.parentElement.style.opacity = '1';
+              card.parentElement.style.transform = 'scale(1)';
+            }, 10);
+          } else {
+            card.parentElement.style.opacity = '0';
+            card.parentElement.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+              card.parentElement.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+    
+    // Hover effect for project cards
+    projectCards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+  });
+</script>

@@ -1,20 +1,141 @@
-<div class="container py-5 text-white">
-  <h2 class="text-center fw-bold mb-5">
-    <i class="bi bi-tools me-2"></i>Technical Skills
-  </h2>
+<div class="skills-container text-white">
+  <!-- Hero Section -->
+  <div class="skills-hero text-center py-5 mb-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-4 gradient-text">
+        <i class="bi bi-stars me-3"></i>Technical Expertise
+      </h1>
+      <p class="lead mb-5" style="max-width: 800px; margin: 0 auto;">
+        A comprehensive showcase of my technical skills, tools, and technologies that I've mastered through 
+        hands-on experience and continuous learning.
+      </p>
+      
+      <!-- Featured Technologies -->
+      <div class="featured-tech d-flex flex-wrap justify-content-center gap-4 mb-5">
+        <div *ngFor="let tech of featuredTech" class="tech-badge-large">
+          <div class="tech-icon" [style.background-color]="tech.color">
+            <i class="bi bi-{{tech.icon === 'dotnet' ? 'windows' : tech.icon === 'database' ? 'database' : tech.icon === 'microsoft' ? 'microsoft' : tech.icon}}"></i>
+          </div>
+          <span class="tech-name">{{tech.name}}</span>
+        </div>
+      </div>
+      
+      <!-- Stats Overview -->
+      <div class="row justify-content-center g-4">
+        <div class="col-md-3 col-sm-6" *ngFor="let stat of skillStats">
+          <div class="stat-card text-center p-4">
+            <div class="stat-value display-6 fw-bold text-primary">{{stat.value}}</div>
+            <div class="stat-label fw-semibold mb-1">{{stat.label}}</div>
+            <div class="stat-desc small text-light">{{stat.description}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <div class="row g-4">
-    <div class="col-md-6 col-lg-4" *ngFor="let category of skillCategories">
-      <div class="card h-100 skill-card shadow border-0">
-        <div class="card-body">
-          <h5 class="card-title text-warning fw-semibold">
-            <i class="bi bi-lightning-fill me-2"></i>{{ category.title }}
-          </h5>
-          <ul class="list-unstyled mt-3">
-            <li *ngFor="let skill of category.skills" class="mb-2">
-              <i class="bi bi-check-circle-fill text-success me-2"></i>{{ skill }}
-            </li>
-          </ul>
+  <!-- Main Skills Grid -->
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12">
+        <h2 class="section-title mb-5">
+          <i class="bi bi-diagram-3 me-2"></i>Skills Breakdown
+          <span class="subtitle">Detailed proficiency across technologies</span>
+        </h2>
+      </div>
+      
+      <div class="col-lg-6 col-md-12" *ngFor="let category of skillCategories">
+        <div class="skill-category-card">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="bi {{category.icon}}"></i>
+            </div>
+            <h3 class="category-title">{{category.title}}</h3>
+          </div>
+          
+          <div class="skills-list">
+            <div class="skill-item" *ngFor="let skill of category.skills">
+              <div class="skill-info">
+                <span class="skill-name">{{skill.name}}</span>
+                <span class="skill-level">{{skill.level}}%</span>
+              </div>
+              <div class="progress skill-progress">
+                <div 
+                  class="progress-bar" 
+                  role="progressbar" 
+                  [style.width.%]="skill.level"
+                  [style.background-color]=" '#4facfe'"
+                  [attr.aria-valuenow]="skill.level"
+                  aria-valuemin="0"
+                  aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Learning Timeline -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="learning-timeline-card p-5">
+          <h2 class="section-title mb-4">
+            <i class="bi bi-graph-up-arrow me-2"></i>Learning Journey
+          </h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2022 - Present</div>
+              <div class="timeline-content">
+                <h5>Advanced Full-Stack Development</h5>
+                <p>Mastering .NET ecosystem, Angular, Cloud services, and enterprise architecture patterns</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2021 - 2022</div>
+              <div class="timeline-content">
+                <h5>Core Development Skills</h5>
+                <p>Fundamentals of web development, databases, APIs, and software engineering principles</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2020 - 2021</div>
+              <div class="timeline-content">
+                <h5>Programming Foundations</h5>
+                <p>Learning programming basics, algorithms, data structures, and problem-solving</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certification Badges -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <h2 class="section-title mb-4">
+          <i class="bi bi-award me-2"></i>Certifications & Expertise
+        </h2>
+        <div class="certification-badges">
+          <div class="cert-badge">
+            <i class="bi bi-microsoft"></i>
+            <span>.NET Specialist</span>
+          </div>
+          <div class="cert-badge">
+            <i class="bi bi-google"></i>
+            <span>Angular Certified</span>
+          </div>
+          <div class="cert-badge">
+            <i class="bi bi-database"></i>
+            <span>SQL Expert</span>
+          </div>
+          <div class="cert-badge">
+            <i class="bi bi-cloud"></i>
+            <span>Azure Fundamentals</span>
+          </div>
+          <div class="cert-badge">
+            <i class="bi bi-code-square"></i>
+            <span>Full Stack Dev</span>
+          </div>
         </div>
       </div>
     </div>

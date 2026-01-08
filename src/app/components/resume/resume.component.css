@@ -1,79 +1,101 @@
-/* Main Container Adjustments */
-.container {
-  max-width: 1400px !important; /* Increase maximum width */
-  padding-left: 2rem !important;
-  padding-right: 2rem !important;
+/* Reset excessive padding and margins */
+.main-content {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100%;
 }
+
+/* Remove container constraints and make it full width */
+/* .container-fluid {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+} */
 
 /* Reduce overall padding */
 .py-5 {
-  padding-top: 2rem !important;
-  padding-bottom: 2rem !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
 }
 
-/* Resume Section Styling - Reduce margins */
+/* Resume Section Styling - More compact */
 .resume-section {
-  padding: 1.2rem !important; /* Reduced from 1.5rem */
+  padding: 1rem !important;
   background: rgba(255, 255, 255, 0.02);
-  border-radius: 10px;
-  border-left: 4px solid #007bff;
-  margin-bottom: 1.5rem !important; /* Reduced from 2rem */
+  border-radius: 8px;
+  border-left: 3px solid #007bff;
+  margin-bottom: 1.2rem !important;
   transition: all 0.3s ease;
   width: 100%;
 }
 
 .resume-section:hover {
   background: rgba(255, 255, 255, 0.05);
-  transform: translateX(5px);
+  transform: translateX(3px);
 }
 
 .section-title {
   color: #4facfe;
   font-weight: 700;
-  margin-bottom: 1.2rem !important; /* Reduced from 1.5rem */
-  padding-bottom: 0.5rem;
+  margin-bottom: 1rem !important;
+  padding-bottom: 0.4rem;
   border-bottom: 2px solid rgba(79, 172, 254, 0.3);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  font-size: 1.2rem;
 }
 
-/* Profile Header - Reduce padding */
+/* Profile Header - More compact */
 .profile-badge {
   text-align: center;
-  padding: 1.2rem !important; /* Reduced from 1.5rem */
+  padding: 1rem !important;
   background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(118, 75, 162, 0.1));
-  border-radius: 15px;
+  border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  max-width: 500px;
-  margin: 0 auto 1.5rem !important; /* Reduced bottom margin */
+  max-width: 450px;
+  margin: 0 auto 1rem !important;
 }
 
 .title-badge {
   display: inline-block;
   background: linear-gradient(90deg, #667eea, #764ba2);
   color: white;
-  padding: 0.25rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+
+.contact-links {
+  margin-bottom: 0.8rem !important;
 }
 
 .contact-links .btn {
-  border-radius: 20px;
-  padding: 0.375rem 1rem;
-  margin: 0.25rem !important; /* Reduced margin */
+  border-radius: 18px;
+  padding: 0.3rem 0.8rem !important;
+  margin: 0.1rem !important;
+  font-size: 0.85rem;
 }
 
 .contact-info {
   color: #aaa;
-  font-size: 0.9rem;
-  margin-top: 1rem !important; /* Reduced from default */
+  font-size: 0.85rem;
+  margin-top: 0.5rem !important;
 }
 
-/* Timeline Styling - Adjust spacing */
+/* Objective section specific - Remove extra padding */
+.section-content .lead {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* Timeline Styling - More compact */
 .timeline {
   position: relative;
-  padding-left: 25px !important; /* Reduced from 30px */
+  padding-left: 20px !important;
 }
 
 .timeline::before {
@@ -82,55 +104,56 @@
   left: 0;
   top: 0;
   bottom: 0;
-  width: 3px;
+  width: 2px;
   background: linear-gradient(to bottom, #667eea, #764ba2);
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 1.5rem !important; /* Reduced from 2rem */
-  padding-left: 15px !important; /* Reduced from 20px */
+  margin-bottom: 1.2rem !important;
+  padding-left: 12px !important;
 }
 
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -28px !important; /* Adjusted from -33px */
+  left: -24px !important;
   top: 0;
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   background: #764ba2;
   border-radius: 50%;
-  border: 3px solid #667eea;
+  border: 2px solid #667eea;
 }
 
 .timeline-header {
-  margin-bottom: 0.8rem !important; /* Reduced from 1rem */
+  margin-bottom: 0.6rem !important;
 }
 
 .company-tag {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px !important; /* Reduced from 10px */
+  gap: 6px !important;
   align-items: center;
-  margin-top: 0.3rem !important; /* Reduced from 0.5rem */
+  margin-top: 0.2rem !important;
 }
 
 .date-badge {
   background: rgba(0, 123, 255, 0.1);
   color: #4facfe;
-  padding: 0.2rem 0.6rem !important; /* Reduced from 0.25rem 0.75rem */
-  border-radius: 15px;
-  font-size: 0.8rem;
+  padding: 0.15rem 0.5rem !important;
+  border-radius: 12px;
+  font-size: 0.75rem;
 }
 
 .timeline-content {
-  padding-left: 0.8rem !important; /* Reduced from 1rem */
+  padding-left: 0.5rem !important;
 }
 
 .timeline-content li {
-  margin-bottom: 0.4rem !important; /* Reduced from 0.5rem */
+  margin-bottom: 0.3rem !important;
+  font-size: 0.9rem;
   position: relative;
 }
 
@@ -138,90 +161,101 @@
   content: '▸';
   color: #4facfe;
   position: absolute;
-  left: -0.8rem !important; /* Reduced from -1rem */
+  left: -0.6rem !important;
+  font-size: 0.8rem;
 }
 
-/* Tech Stack - Reduce spacing */
+/* Tech Stack - More compact */
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px !important; /* Reduced from 8px */
-  margin-top: 0.8rem !important; /* Reduced from 1rem */
+  gap: 4px !important;
+  margin-top: 0.6rem !important;
 }
 
 .tech-badge {
   background: rgba(79, 172, 254, 0.15);
   color: #4facfe;
-  padding: 0.2rem 0.6rem !important; /* Reduced from 0.25rem 0.75rem */
-  border-radius: 15px;
-  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem !important;
+  border-radius: 12px;
+  font-size: 0.7rem;
   border: 1px solid rgba(79, 172, 254, 0.3);
 }
 
-/* Project Cards - Reduce padding */
+/* Project Cards - More compact */
 .project-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 1.2rem !important; /* Reduced from 1.5rem */
+  border-radius: 8px;
+  padding: 1rem !important;
   transition: all 0.3s ease;
   height: 100%;
+  margin-bottom: 0.8rem !important;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  border-color: #4facfe;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.project-card ul {
+  padding-left: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card li {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
 }
 
 .project-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.8rem !important; /* Reduced from 1rem */
+  margin-bottom: 0.6rem !important;
+}
+
+.project-header h5 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
 }
 
 .project-tag {
   background: linear-gradient(90deg, #28a745, #20c997);
   color: white;
-  padding: 0.2rem 0.6rem !important; /* Reduced from 0.25rem 0.75rem */
-  border-radius: 15px;
-  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem !important;
+  border-radius: 12px;
+  font-size: 0.7rem;
 }
 
 .project-link {
   color: #4facfe;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .project-link:hover {
   text-decoration: underline;
 }
 
-/* Skills - Reduce margins */
+/* Skills - More compact */
 .skill-category {
-  margin-bottom: 1.2rem !important; /* Reduced from 1.5rem */
+  margin-bottom: 1rem !important;
 }
 
 .skill-category h5 {
   color: #aaa;
-  margin-bottom: 0.5rem !important; /* Reduced from 0.75rem */
-  font-size: 0.95rem;
+  margin-bottom: 0.4rem !important;
+  font-size: 0.9rem;
 }
 
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px !important; /* Reduced from 8px */
+  gap: 4px !important;
 }
 
 .skill-tag {
   background: rgba(255, 255, 255, 0.05);
   color: #ddd;
-  padding: 0.3rem 0.8rem !important; /* Reduced from 0.375rem 0.875rem */
-  border-radius: 20px;
-  font-size: 0.8rem;
+  padding: 0.25rem 0.6rem !important;
+  border-radius: 16px;
+  font-size: 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
@@ -229,13 +263,13 @@
 .skill-tag:hover {
   background: rgba(79, 172, 254, 0.2);
   color: #4facfe;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
-/* Education - Reduce spacing */
+/* Education - More compact */
 .education-timeline .edu-item {
-  margin-bottom: 1.2rem !important; /* Reduced from 1.5rem */
-  padding-bottom: 1.2rem !important; /* Reduced from 1.5rem */
+  margin-bottom: 1rem !important;
+  padding-bottom: 1rem !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -243,126 +277,131 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.3rem !important; /* Reduced from 0.5rem */
+  margin-bottom: 0.2rem !important;
 }
 
 .edu-header h5 {
   margin: 0;
-  font-size: 1.05rem; /* Slightly reduced */
+  font-size: 1rem;
 }
 
 .edu-date {
   color: #4facfe;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .edu-institution {
   color: #aaa;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .gpa-badge,
 .score-badge {
-  margin-top: 0.3rem !important; /* Reduced from 0.5rem */
+  margin-top: 0.2rem !important;
 }
 
 .progress-bar-container {
-  margin-top: 0.8rem !important; /* Reduced from 1rem */
+  margin-top: 0.6rem !important;
 }
 
 .progress-label {
   color: #28a745;
-  font-size: 0.8rem;
-  margin-bottom: 0.2rem;
+  font-size: 0.75rem;
+  margin-bottom: 0.15rem;
 }
 
-/* Certifications - Reduce gap */
+/* Certifications - More compact */
 .certifications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); /* Reduced from 250px */
-  gap: 0.8rem !important; /* Reduced from 1rem */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.6rem !important;
 }
 
 .cert-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 0.8rem !important; /* Reduced from 1rem */
+  border-radius: 8px;
+  padding: 0.6rem !important;
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
 }
 
 .cert-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   border-color: #4facfe;
 }
 
 .cert-icon {
-  font-size: 1.3rem; /* Reduced from 1.5rem */
+  font-size: 1.1rem;
   color: #4facfe;
-  margin-right: 0.8rem !important; /* Reduced from 1rem */
+  margin-right: 0.6rem !important;
 }
 
 .cert-content h6 {
   margin: 0;
-  font-size: 0.9rem; /* Reduced from 0.95rem */
+  font-size: 0.85rem;
 }
 
 .cert-org {
   color: #aaa;
-  font-size: 0.8rem; /* Reduced from 0.85rem */
-  margin: 0.2rem 0 0 0; /* Reduced from 0.25rem */
+  font-size: 0.75rem;
+  margin: 0.1rem 0 0 0;
 }
 
 .cert-link {
   color: #4facfe;
   text-decoration: none;
-  font-size: 0.75rem; /* Reduced from 0.8rem */
-  margin-left: 0.3rem !important; /* Reduced from 0.5rem */
+  font-size: 0.7rem;
+  margin-left: 0.2rem !important;
 }
 
-/* Languages - Reduce margin */
+/* Languages - More compact */
 .language-item {
-  margin-bottom: 1.2rem !important; /* Reduced from 1.5rem */
+  margin-bottom: 1rem !important;
 }
 
 .language-level {
   color: #4facfe;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
-/* Additional utility classes for reducing space */
-.mb-5 {
-  margin-bottom: 2rem !important; /* If using Bootstrap, override */
+/* Remove Bootstrap's default padding */
+.row {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
 }
 
-.mt-5 {
-  margin-top: 2rem !important; /* If using Bootstrap, override */
+.col-md-6, .col-md-12 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 /* Responsive - Adjust for mobile */
 @media (max-width: 768px) {
-  .container {
-    max-width: 100% !important;
+  .container-fluid {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
   
   .profile-badge {
-    padding: 1rem !important;
+    padding: 0.8rem !important;
+    max-width: 100%;
   }
 
   .contact-links .btn {
-    margin-bottom: 0.3rem !important; /* Reduced from 0.5rem */
+    margin-bottom: 0.2rem !important;
+    display: block;
+    width: 100%;
+    margin: 0.2rem 0 !important;
   }
 
   .timeline {
-    padding-left: 15px !important; /* Reduced from 20px */
+    padding-left: 15px !important;
   }
   
   .timeline-item::before {
-    left: -20px !important; /* Adjusted for mobile */
+    left: -18px !important;
   }
 
   .edu-header {
@@ -371,27 +410,32 @@
   }
 
   .edu-date {
-    margin-top: 0.2rem !important; /* Reduced from 0.25rem */
+    margin-top: 0.1rem !important;
   }
   
   .resume-section {
-    padding: 1rem !important;
-    margin-bottom: 1.2rem !important;
+    padding: 0.8rem !important;
+    margin-bottom: 1rem !important;
   }
   
   .section-title {
-    margin-bottom: 1rem !important;
+    margin-bottom: 0.8rem !important;
+    font-size: 1.1rem;
+  }
+  
+  .certifications-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 /* For extra small screens */
 @media (max-width: 576px) {
-  .container {
+  .container-fluid {
     padding-left: 0.75rem !important;
     padding-right: 0.75rem !important;
   }
   
-  .certifications-grid {
-    grid-template-columns: 1fr; /* Single column on mobile */
+  .main-content {
+    padding: 0.5rem !important;
   }
 }

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { SocialMediaLink, SocialMediaService } from '../../services/social-media.service';
 
 @Component({
   selector: 'app-footer',
@@ -9,6 +10,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
+
+  constructor(private socialMediaService: SocialMediaService) {
+     // Get only primary social links
+    this.socialLinks = this.socialMediaService.getPrimarySocialLinks();
+    this.contactInfo = this.socialMediaService.getContactInfo();
+  }
+  
+  socialLinks: SocialMediaLink[] = [];
+  contactInfo: any;
+
   currentYear: number = new Date().getFullYear();
   
   // Navigation links
@@ -23,13 +34,13 @@ export class FooterComponent {
   ];
 
   // Social media links
-  socialLinks = [
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/vikashnagar', icon: 'bi-linkedin', color: '#0077B5' },
-    { name: 'GitHub', url: 'https://github.com/vikashnagar', icon: 'bi-github', color: '#333333' },
-    { name: 'YouTube', url: 'https://youtube.com/largecoder', icon: 'bi-youtube', color: '#FF0000' },
-    { name: 'Twitter', url: 'https://twitter.com/vikashnagar', icon: 'bi-twitter', color: '#1DA1F2' },
-    { name: 'Instagram', url: 'https://instagram.com/vikashnagar', icon: 'bi-instagram', color: '#E4405F' }
-  ];
+  // socialLinks = [
+  //   { name: 'LinkedIn', url: 'https://linkedin.com/in/vikashnagar', icon: 'bi-linkedin', color: '#0077B5' },
+  //   { name: 'GitHub', url: 'https://github.com/vikashnagar', icon: 'bi-github', color: '#333333' },
+  //   { name: 'YouTube', url: 'https://youtube.com/largecoder', icon: 'bi-youtube', color: '#FF0000' },
+  //   { name: 'Twitter', url: 'https://twitter.com/vikashnagar', icon: 'bi-twitter', color: '#1DA1F2' },
+  //   { name: 'Instagram', url: 'https://instagram.com/vikashnagar', icon: 'bi-instagram', color: '#E4405F' }
+  // ];
 
   // Quick links
   quickLinks = [
@@ -52,4 +63,13 @@ scrollToTop() {
     behavior: 'smooth'
   });
 }
+
+
+ openWhatsApp() {
+    this.socialMediaService.openWhatsApp();
+  }
+
+  openEmail() {
+    this.socialMediaService.openEmail();
+  }
 }

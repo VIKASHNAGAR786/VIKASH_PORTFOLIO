@@ -1,57 +1,157 @@
-<!-- Mobile Sidebar Toggle Button -->
-<button
-  class="btn btn-outline-secondary d-md-none position-fixed top-0 start-0 m-3"
-  style="z-index: 1100;"
-  aria-label="Toggle Sidebar"
-  (click)="toggleSidebar()"
->
-  <i class="bi bi-list fs-4"></i>
-</button>
+<!-- Mobile Overlay -->
+<div class="mobile-overlay" *ngIf="isMobile && isSidebarOpen" (click)="toggleSidebar()"></div>
 
 <!-- Layout Wrapper -->
 <div class="d-flex">
   <!-- Sidebar -->
-  <nav
-    class="sidebar d-flex flex-column position-fixed vh-100"
-    [ngClass]="{ collapsed: !isSidebarOpen }"
+  <nav 
+    class="sidebar"
+    [ngClass]="{ 
+      'collapsed': !isSidebarOpen,
+      'mobile-open': isMobile && isSidebarOpen,
+      'hover-effect': isHovering
+    }"
+    (mouseenter)="onSidebarMouseEnter()"
+    (mouseleave)="onSidebarMouseLeave()"
     role="navigation"
-    aria-label="Sidebar Navigation"
+    aria-label="Main Navigation"
   >
-    <!-- Sidebar Header -->
-    <div class="d-flex align-items-center justify-content-between sidebar-header">
-      <span class="fw-bold fs-5" *ngIf="isSidebarOpen">Vikash</span>
-      <button
-        class="btn btn-sm btn-light"
-        (click)="toggleSidebar()"
-        aria-label="Collapse Sidebar"
-      >
-        <i class="bi" [ngClass]="isSidebarOpen ? 'bi-chevron-left' : 'bi-list'"></i>
-      </button>
+    <!-- Sidebar Header with Profile -->
+    <div class="sidebar-header">
+      <div class="profile-section d-flex align-items-center" *ngIf="isSidebarOpen">
+        <div class="profile-avatar">
+          <div class="avatar-circle">
+            <i class="bi bi-person-circle"></i>
+          </div>
+          <div class="profile-status" [ngClass]="profile.status"></div>
+        </div>
+        <div class="profile-info ms-3">
+          <h6 class="profile-name mb-0">{{ profile.name }}</h6>
+          <small class="profile-title">{{ profile.title }}</small>
+        </div>
+      </div>
+      
+      <div class="sidebar-toggle" (click)="toggleSidebar()">
+        <i class="bi" [ngClass]="isSidebarOpen ? 'bi-chevron-double-left' : 'bi-chevron-double-right'"></i>
+      </div>
     </div>
 
-    <!-- Navigation Links -->
-    <ul class="nav flex-column mt-3 px-2">
-      <li class="nav-item" *ngFor="let item of sidebarItems">
-        <a
-          class="nav-link d-flex align-items-center px-3 py-2 rounded"
-          [ngClass]="{ active: activePage === item.id }"
-          [attr.title]="!isSidebarOpen ? item.label : null"
-          [routerLink]="['/' + item.id]"
-          (click)="setActivePage(item.id)"
-        >
-          <i class="bi me-2" [ngClass]="item.icon"></i>
-          <span *ngIf="isSidebarOpen">{{ item.label }}</span>
+    <!-- Current Time (Only when expanded) -->
+    <div class="current-time" *ngIf="isSidebarOpen">
+      <i class="bi bi-clock me-2"></i>
+      <span>{{ formatTime() }}</span>
+    </div>
+
+    <!-- Navigation Links by Category -->
+    <div class="sidebar-content">
+      <div class="nav-category" *ngFor="let category of sidebarItems">
+        <div class="category-label" *ngIf="isSidebarOpen">{{ category.category }}</div>
+        <ul class="nav-list">
+          <li *ngFor="let item of category.items">
+            <a
+              class="nav-link"
+              [ngClass]="{ 'active': activePage === item.id }"
+              [title]="item.description"
+              [routerLink]="['/' + item.id]"
+              (click)="setActivePage(item.id)"
+            >
+              <div class="nav-icon">
+                <i class="bi" [ngClass]="item.icon"></i>
+              </div>
+              <div class="nav-text" *ngIf="isSidebarOpen">
+                <span>{{ item.label }}</span>
+                <small class="nav-description">{{ item.description }}</small>
+              </div>
+              <div class="nav-indicator" *ngIf="activePage === item.id && isSidebarOpen">
+                <div class="indicator-dot"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="social-section" *ngIf="isSidebarOpen">
+      <div class="social-label">Connect</div>
+      <div class="social-icons">
+        <a 
+          *ngFor="let social of socialLinks" 
+          [href]="social.url" 
+          target="_blank"
+          class="social-icon"
+          [style.background-color]="social.color"
+          [title]="social.platform">
+          <i class="bi" [ngClass]="social.icon"></i>
         </a>
-      </li>
-    </ul>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions" *ngIf="isSidebarOpen">
+      <div class="action-label">Quick Actions</div>
+      <div class="action-buttons">
+        <button 
+          *ngFor="let action of quickActions"
+          class="action-btn"
+          (click)="action.action()">
+          <i class="bi me-2" [ngClass]="action.icon"></i>
+          <span>{{ action.label }}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Theme Selector -->
+    <div class="theme-section">
+      <div class="theme-toggle" (click)="toggleThemeOptions()" *ngIf="isSidebarOpen">
+        <i class="bi bi-palette me-2"></i>
+        <span>Theme</span>
+        <i class="bi bi-chevron-down ms-auto theme-arrow"></i>
+      </div>
+      
+      <div class="theme-options" *ngIf="showThemeOptions && isSidebarOpen">
+        <div 
+          *ngFor="let theme of themes"
+          class="theme-option"
+          [ngClass]="{ 'active': currentTheme === theme.id }"
+          (click)="switchTheme(theme.id)">
+          <div class="theme-preview" [style.background-color]="theme.color"></div>
+          <i class="bi" [ngClass]="theme.icon"></i>
+          <span>{{ theme.name }}</span>
+        </div>
+      </div>
+
+      <div class="mini-theme-toggle" *ngIf="!isSidebarOpen" (click)="toggleThemeOptions()">
+        <i class="bi bi-palette"></i>
+      </div>
+    </div>
   </nav>
 
   <!-- Main Content -->
-  <main
-    class="main-content p-4 flex-grow-1"
-    [ngClass]="{ collapsed: !isSidebarOpen }"
+  <main 
+    class="main-content"
+    [ngClass]="{ 'sidebar-collapsed': !isSidebarOpen }"
     role="main"
   >
-    <router-outlet></router-outlet>
+    <!-- Mobile Header -->
+    <div class="mobile-header d-md-none">
+      <button class="menu-toggle" (click)="toggleSidebar()">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="mobile-profile">
+        <div class="mobile-avatar" (click)="toggleProfileMenu()">
+          <i class="bi bi-person-circle"></i>
+        </div>
+        <div class="mobile-title">
+          <h6 class="mb-0">Vikash Nagar</h6>
+          <small>Full Stack Developer</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
   </main>
 </div>

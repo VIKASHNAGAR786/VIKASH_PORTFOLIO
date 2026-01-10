@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css'],
-  imports: [CommonModule]
+  imports: [CommonModule, FooterComponent]
 })
 export class SkillsComponent {
   // Main skill categories with icons and progress levels

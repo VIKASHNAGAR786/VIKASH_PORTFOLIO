@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { BackgroundComponent } from "./components/background/background.component";
+import { FooterComponent } from "./components/footer/footer.component";
 
 @Component({
   selector: 'app-root', 
-  imports: [RouterOutlet, NavbarComponent, BackgroundComponent],
+  imports: [RouterOutlet, NavbarComponent, BackgroundComponent, FooterComponent],
   template: `
   <app-background></app-background>
   <header>
@@ -16,12 +17,7 @@ import { BackgroundComponent } from "./components/background/background.componen
     <router-outlet></router-outlet>
   </main>
   <!-- Footer -->
-  <footer class="bg-success text-white text-center py-3">
-    <div class="container">
-      <p class="mb-1">🌱 <strong>Vikash Nagar</strong> - Software Developer</p>
-      <p class="mb-0">&copy; {{ currentYear }} vikash. All rights reserved.</p>
-    </div>
-  </footer>
+  <!-- <app-footer></app-footer> -->
 `,
   
   styleUrl: './app.component.css'

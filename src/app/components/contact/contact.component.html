@@ -1,1 +1,349 @@
-<p>contact works!</p>
+<div class="contact-container">
+  <!-- Hero Section -->
+  <div class="contact-hero text-center py-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-4 gradient-text">
+        <i class="bi bi-chat-left-text me-3"></i>Let's Connect
+      </h1>
+      <p class="lead mb-4" style="max-width: 800px; margin: 0 auto; color: antiquewhite;">
+        I'm always open to discussing new opportunities, interesting projects, or just having a tech chat. 
+        Feel free to reach out through any of the channels below!
+      </p>
+    </div>
+  </div>
+
+  <!-- Main Contact Section -->
+  <div class="container">
+    <div class="row">
+      <!-- Contact Methods Cards -->
+      <div class="col-lg-8">
+        <div class="contact-cards mb-5">
+          <h3 class="section-title mb-4">
+            <i class="bi bi-telephone me-2"></i>Direct Contact Methods
+          </h3>
+          
+          <div class="row g-4">
+            <!-- WhatsApp Card -->
+            <div class="col-md-6">
+              <div class="contact-card whatsapp-card">
+                <div class="card-header">
+                  <div class="contact-icon">
+                    <i class="bi bi-whatsapp"></i>
+                  </div>
+                  <h4 class="contact-title">WhatsApp</h4>
+                  <span class="contact-tag">Fastest Response</span>
+                </div>
+                <div class="card-body">
+                  <p class="contact-description">
+                    For quick queries, project discussions, or instant messaging. I typically respond within 1 hour.
+                  </p>
+                  <div class="contact-number">
+                    <i class="bi bi-phone me-2"></i>
+                    <span>{{contactInfo.whatsapp.number}}</span>
+                    <button class="btn btn-outline-light btn-sm ms-2" 
+                            (click)="copyToClipboard(contactInfo.whatsapp.number, 'WhatsApp number')">
+                      <i class="bi bi-copy"></i>
+                    </button>
+                  </div>
+                  <div class="preview-message">
+                    <small>Message preview:</small>
+                    <p class="mt-1">{{contactInfo.whatsapp.message}}</p>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <button class="btn btn-success w-100" (click)="openWhatsApp()">
+                    <i class="bi bi-whatsapp me-2"></i>Open WhatsApp
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email Card -->
+            <div class="col-md-6">
+              <div class="contact-card email-card">
+                <div class="card-header">
+                  <div class="contact-icon">
+                    <i class="bi bi-envelope"></i>
+                  </div>
+                  <h4 class="contact-title">Email</h4>
+                  <span class="contact-tag">Formal Communication</span>
+                </div>
+                <div class="card-body">
+                  <p class="contact-description">
+                    For detailed project proposals, collaboration requests, or formal communication.
+                  </p>
+                  <div class="contact-email">
+                    <i class="bi bi-envelope me-2"></i>
+                    <span>{{contactInfo.email.address}}</span>
+                    <button class="btn btn-outline-light btn-sm ms-2" 
+                            (click)="copyToClipboard(contactInfo.email.address, 'Email address')">
+                      <i class="bi bi-copy"></i>
+                    </button>
+                  </div>
+                  <div class="email-tips mt-3">
+                    <small>Tips for a better response:</small>
+                    <ul class="mt-1">
+                      <li>Include a clear subject line</li>
+                      <li>Briefly introduce yourself</li>
+                      <li>State your purpose clearly</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <button class="btn btn-primary w-100" (click)="openEmail()">
+                    <i class="bi bi-envelope me-2"></i>Compose Email
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-section mb-5">
+          <h3 class="section-title mb-4">
+            <i class="bi bi-send me-2"></i>Send Me a Message
+          </h3>
+          <div class="contact-form-card">
+            <div class="form-header">
+              <h5>Prefer to use this form? Fill it out and I'll get back to you ASAP!</h5>
+            </div>
+            <div class="form-body">
+              <div class="alert alert-success" *ngIf="contactForm.submitted">
+                <i class="bi bi-check-circle me-2"></i>
+                Thank you for your message! I'll get back to you soon.
+              </div>
+              
+              <div class="alert alert-danger" *ngIf="contactForm.error">
+                <i class="bi bi-exclamation-triangle me-2"></i>
+                {{contactForm.error}}
+              </div>
+
+              <form (ngSubmit)="submitForm()" *ngIf="!contactForm.submitted">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Your Name *</label>
+                    <input type="text" class="form-control" 
+                           [(ngModel)]="contactForm.name" 
+                           name="name"
+                           placeholder="Enter your name" 
+                           required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Your Email *</label>
+                    <input type="email" class="form-control" 
+                           [(ngModel)]="contactForm.email" 
+                           name="email"
+                           placeholder="Enter your email" 
+                           required>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Subject</label>
+                  <input type="text" class="form-control" 
+                         [(ngModel)]="contactForm.subject" 
+                         name="subject"
+                         placeholder="What is this regarding?">
+                </div>
+                <div class="mb-4">
+                  <label class="form-label">Your Message *</label>
+                  <textarea class="form-control" 
+                            [(ngModel)]="contactForm.message" 
+                            name="message"
+                            rows="5" 
+                            placeholder="Tell me about your project, opportunity, or question..."
+                            required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg w-100" [disabled]="contactForm.loading">
+                  <span *ngIf="!contactForm.loading">
+                    <i class="bi bi-send me-2"></i>Send Message
+                  </span>
+                  <span *ngIf="contactForm.loading">
+                    <i class="bi bi-arrow-clockwise me-2"></i>Sending...
+                  </span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <div class="sidebar">
+          <!-- Availability -->
+          <div class="sidebar-card availability-card">
+            <div class="sidebar-card-header">
+              <h4><i class="bi bi-calendar-check me-2"></i>Currently Available For</h4>
+            </div>
+            <div class="sidebar-card-body">
+              <div class="availability-list">
+                <div class="availability-item" *ngFor="let item of availability">
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>{{item}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Response Times -->
+          <div class="sidebar-card response-card">
+            <div class="sidebar-card-header">
+              <h4><i class="bi bi-clock me-2"></i>Typical Response Time</h4>
+            </div>
+            <div class="sidebar-card-body">
+              <div class="response-times">
+                <div class="response-item" *ngFor="let item of responseTimes">
+                  <div class="response-icon" [style.background-color]="item.color">
+                    <i class="bi" [class]="item.icon"></i>
+                  </div>
+                  <div class="response-info">
+                    <h6>{{item.type}}</h6>
+                    <p>{{item.time}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media -->
+          <div class="sidebar-card social-card">
+            <div class="sidebar-card-header">
+              <h4><i class="bi bi-people me-2"></i>Connect on Social Media</h4>
+            </div>
+            <div class="sidebar-card-body">
+              <div class="social-links">
+                <div class="social-item" *ngFor="let social of socialLinks" 
+                     (click)="openSocialLink(social.url)">
+                  <div class="social-icon" [style.background-color]="social.color">
+                    <i class="bi" [class]="social.icon"></i>
+                  </div>
+                  <span class="social-name">{{social.platform}}</span>
+                  <i class="bi bi-box-arrow-up-right ms-auto"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Contact -->
+          <div class="sidebar-card quick-contact">
+            <div class="sidebar-card-body text-center">
+              <div class="quick-icon mb-3">
+                <i class="bi bi-lightning-charge"></i>
+              </div>
+              <h5 class="mb-2">Need Quick Assistance?</h5>
+              <p class="text-light mb-3">
+                For urgent matters, WhatsApp is your best bet for a fast response.
+              </p>
+              <button class="btn btn-success w-100 mb-2" (click)="openWhatsApp()">
+                <i class="bi bi-whatsapp me-2"></i>Message Now
+              </button>
+              <button class="btn btn-outline-light w-100" (click)="openEmail()">
+                <i class="bi bi-envelope me-2"></i>Send Email
+              </button>
+            </div>
+          </div>
+
+          <!-- Business Hours -->
+          <div class="sidebar-card hours-card">
+            <div class="sidebar-card-header">
+              <h4><i class="bi bi-clock-history me-2"></i>Working Hours</h4>
+            </div>
+            <div class="sidebar-card-body">
+              <div class="working-hours">
+                <div class="day">
+                  <span>Monday - Friday</span>
+                  <span>9:00 AM - 6:00 PM</span>
+                </div>
+                <div class="day">
+                  <span>Saturday</span>
+                  <span>10:00 AM - 2:00 PM</span>
+                </div>
+                <div class="day">
+                  <span>Sunday</span>
+                  <span class="text-warning">Limited Availability</span>
+                </div>
+              </div>
+              <div class="timezone mt-2">
+                <i class="bi bi-globe me-1"></i> Timezone: IST (UTC+5:30)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Location Section -->
+    <div class="location-section py-5 mt-5">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h3 class="section-title mb-4">
+            <i class="bi bi-geo-alt me-2"></i>Based In
+          </h3>
+          <div class="location-card">
+            <div class="location-header">
+              <div class="location-icon">
+                <i class="bi bi-pin-map"></i>
+              </div>
+              <h4>Jaipur, Rajasthan</h4>
+            </div>
+            <div class="location-body">
+              <p>
+                I'm currently based in the Pink City - Jaipur. While I work remotely with clients worldwide, 
+                I'm also open to local opportunities and meetups in the Rajasthan area.
+              </p>
+              <div class="location-details">
+                <div class="detail">
+                  <i class="bi bi-clock"></i>
+                  <span>IST Timezone</span>
+                </div>
+                <div class="detail">
+                  <i class="bi bi-translate"></i>
+                  <span>English & Hindi</span>
+                </div>
+                <div class="detail">
+                  <i class="bi bi-laptop"></i>
+                  <span>Remote Work Ready</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="map-placeholder">
+            <div class="map-content">
+              <i class="bi bi-map"></i>
+              <h5>Jaipur, Rajasthan</h5>
+              <p>India's Pink City</p>
+              <small class="text-light">Open to remote work worldwide</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section text-center py-5 mb-5">
+      <div class="cta-card p-5">
+        <h2 class="cta-title mb-3">Ready to Start a Project?</h2>
+        <p class="cta-text mb-4">
+          Whether it's a freelance project, full-time opportunity, or just a tech discussion, 
+          I'm excited to hear from you. Let's create something amazing together!
+        </p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary btn-lg me-3" (click)="openWhatsApp()">
+            <i class="bi bi-whatsapp me-2"></i>Chat on WhatsApp
+          </button>
+          <button class="btn btn-outline-light btn-lg" (click)="openEmail()">
+            <i class="bi bi-envelope me-2"></i>Send an Email
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+      <app-footer></app-footer>
+</footer>

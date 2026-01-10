@@ -20,7 +20,7 @@ export class SocialMediaService {
   private socialLinks: SocialMediaLink[] = [
     {
       platform: 'GitHub',
-      url: 'https://github.com/vikashnagar',
+      url: 'https://github.com/VIKASHNAGAR786',
       icon: 'bi-github',
       color: '#333333',
       username: '@vikashnagar',
@@ -30,7 +30,7 @@ export class SocialMediaService {
     },
     {
       platform: 'LinkedIn',
-      url: 'https://linkedin.com/in/vikashnagar',
+      url: 'https://www.linkedin.com/in/vikash-nagar-211459204',
       icon: 'bi-linkedin',
       color: '#0077B5',
       username: 'Vikash Nagar',
@@ -40,7 +40,7 @@ export class SocialMediaService {
     },
     {
       platform: 'YouTube',
-      url: 'https://youtube.com/largecoder',
+      url: 'https://youtube.com/@largecoder?si=3wYyXlSU7o9UvE33',
       icon: 'bi-youtube',
       color: '#FF0000',
       username: '@largecoder',
@@ -59,7 +59,7 @@ export class SocialMediaService {
     },
     {
       platform: 'Instagram',
-      url: 'https://instagram.com/vikashnagar',
+      url: 'https://www.instagram.com/maihuvikashh/',
       icon: 'bi-instagram',
       color: '#E4405F',
       username: '@vikashnagar',
@@ -68,7 +68,7 @@ export class SocialMediaService {
     },
     {
       platform: 'Facebook',
-      url: 'https://facebook.com/vikashnagar',
+      url: 'https://www.facebook.com/vikash.nagar.507679/',
       icon: 'bi-facebook',
       color: '#1877F2',
       username: 'Vikash Nagar',
@@ -76,7 +76,7 @@ export class SocialMediaService {
     },
     {
       platform: 'LeetCode',
-      url: 'https://leetcode.com/vikashnagar',
+      url: 'https://leetcode.com/u/vikashnagar872/',
       icon: 'bi-code-slash',
       color: '#FFA116',
       username: 'vikashnagar',
@@ -85,7 +85,7 @@ export class SocialMediaService {
     },
     {
       platform: 'HackerRank',
-      url: 'https://hackerrank.com/vikashnagar',
+      url: 'https://www.hackerrank.com/profile/vikashnagar872',
       icon: 'bi-terminal',
       color: '#2EC866',
       username: 'vikashnagar',
@@ -114,13 +114,13 @@ export class SocialMediaService {
   // Contact information
   private contactInfo = {
     whatsapp: {
-      number: '+91 8787870909',
-      url: 'https://wa.me/918787870909?text=Hello%20Vikash,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect.',
+      number: '+91 8696169735',
+      url: 'https://wa.me/918696169735?text=Hello%20Vikash,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect.',
       message: 'Hello Vikash, I saw your portfolio and would like to connect.'
     },
     email: {
-      address: 'vikaash@gmail.com',
-      url: 'mailto:vikaash@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Vikash,',
+      address: 'vikashnagar872@gmail.com',
+      url: 'mailto:vikashnagar872@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Vikash,',
       subject: 'Portfolio Inquiry'
     },
     phone: '+91 8696169735'

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from "../footer/footer.component";
+import { SocialMediaService } from '../../services/social-media.service';
 
 @Component({
   selector: 'app-contact',
@@ -10,21 +11,12 @@ import { FooterComponent } from "../footer/footer.component";
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
-  // Contact Information
-  contactInfo = {
-    whatsapp: {
-      number: '+91 8696169735',
-      link: 'https://wa.me/918696169735?text=Hello%20Vikash,%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20portfolio.',
-      message: 'Hi Vikash, I saw your portfolio and would like to connect with you.'
-    },
-    email: {
-      address: 'vikashnagar872@gmail.com',
-      link: 'mailto:vikashnagar872@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Vikash,',
-      subject: 'Portfolio Inquiry'
-    },
-    phone: '+91 8696169735',
-    location: 'Jaipur, Rajasthan, India'
-  };
+
+  constructor(private socialMediaService: SocialMediaService) {
+     this.socialLinks = this.socialMediaService.getPrimarySocialLinks();
+    this.contactInfo = this.socialMediaService.getContactInfo();
+  }
+  contactInfo: any;
 
   // Social Media Links
   socialLinks = [
@@ -98,15 +90,13 @@ export class ContactComponent {
   }
 
   // Open WhatsApp
-  openWhatsApp() {
-    window.open(this.contactInfo.whatsapp.link, '_blank');
+ openWhatsApp() {
+    this.socialMediaService.openWhatsApp();
   }
 
-  // Open Email
   openEmail() {
-    window.open(this.contactInfo.email.link, '_blank');
+    this.socialMediaService.openEmail();
   }
-
   // Submit contact form
   submitForm() {
     if (!this.validateForm()) {

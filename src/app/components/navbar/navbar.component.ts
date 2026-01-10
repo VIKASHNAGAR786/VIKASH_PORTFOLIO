@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { SocialMediaService } from '../../services/social-media.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +12,25 @@ import { RouterModule } from '@angular/router';
   standalone: true
 })
 export class NavbarComponent implements OnInit {
+
+  constructor(private router: Router,
+    private socialMediaService: SocialMediaService
+  ) {
+    this.checkMobile();
+    this.updateTime();
+    
+    // Update active page based on route
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const url = event.urlAfterRedirects.replace('/', '') || 'home';
+        this.activePage = url;
+      }
+    });
+
+    this.socialLinks = this.socialMediaService.getPrimarySocialLinks();
+    this.contactInfo = this.socialMediaService.getContactInfo();
+  }
+  contactInfo: any;
   isSidebarOpen = true;
   activePage = 'home';
   isMobile = false;
@@ -76,18 +96,7 @@ export class NavbarComponent implements OnInit {
     { id: 'purple', name: 'Purple', icon: 'bi-droplet', color: '#6c5ce7' }
   ];
 
-  constructor(private router: Router) {
-    this.checkMobile();
-    this.updateTime();
-    
-    // Update active page based on route
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        const url = event.urlAfterRedirects.replace('/', '') || 'home';
-        this.activePage = url;
-      }
-    });
-  }
+  
 
   ngOnInit() {
     this.checkMobile();
@@ -171,12 +180,20 @@ export class NavbarComponent implements OnInit {
   // Quick actions
   quickActions = [
     { label: 'Download CV', icon: 'bi-download', action: () => this.downloadCV() },
-    { label: 'Email Me', icon: 'bi-envelope', action: () => window.open('mailto:vikaash@gmail.com') },
-    { label: 'WhatsApp', icon: 'bi-whatsapp', action: () => window.open('https://wa.me/918787870909') }
+    { label: 'Email Me', icon: 'bi-envelope', action: () => this.openEmail() },
+    { label: 'WhatsApp', icon: 'bi-whatsapp', action: () => this.openWhatsApp() }
   ];
 
   downloadCV() {
     // Implement CV download
     console.log('Downloading CV...');
+  }
+
+   openWhatsApp() {
+    this.socialMediaService.openWhatsApp();
+  }
+
+  openEmail() {
+    this.socialMediaService.openEmail();
   }
 }

@@ -1,1 +1,204 @@
-<p>testimonials works!</p>
+<div class="testimonials-container">
+  <!-- Hero Section -->
+  <div class="testimonials-hero text-center py-5">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="display-4 fw-bold mb-4 gradient-text">
+          <i class="bi bi-chat-heart-fill me-3"></i>Client & Colleague Feedback
+        </h1>
+        <p class="lead mb-4" style="max-width: 800px; margin: 0 auto;">
+          Words from people I've worked with, collaborated on projects, and helped through my YouTube channel. 
+          Each testimonial represents a successful partnership and a problem solved.
+        </p>
+        
+        <!-- Stats Section -->
+        <div class="stats-section d-flex flex-wrap justify-content-center gap-5 my-5">
+          <div class="stat-item text-center">
+            <div class="stat-number">{{testimonials.length}}</div>
+            <div class="stat-label">Total Testimonials</div>
+          </div>
+          <div class="stat-item text-center">
+            <div class="stat-number">4.9</div>
+            <div class="stat-label">Average Rating</div>
+          </div>
+          <div class="stat-item text-center">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+          <div class="stat-item text-center">
+            <div class="stat-number">12+</div>
+            <div class="stat-label">Projects Referenced</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Filter Tabs -->
+    <div class="filter-section mb-5">
+      <div class="filter-tabs d-flex flex-wrap justify-content-center gap-3">
+        <button 
+          *ngFor="let category of categories"
+          class="filter-btn"
+          [class.active]="activeFilter === category.id"
+          (click)="setFilter(category.id)">
+          {{category.name}} <span class="count-badge">{{category.count}}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Featured Testimonial Carousel -->
+    <div class="featured-carousel mb-5" *ngIf="getFilteredTestimonials().length > 0">
+      <h3 class="section-title mb-4">
+        <i class="bi bi-star-fill me-2"></i>Featured Testimonials
+      </h3>
+      <div class="carousel-container">
+        <div class="featured-testimonial-carousel">
+          <div *ngFor="let testimonial of getFilteredTestimonials(); let i = index" 
+               class="featured-card"
+               [class.active]="i === 0">
+            <div class="featured-content">
+              <div class="quote-icon">
+                <i class="bi bi-quote"></i>
+              </div>
+              <p class="testimonial-text">{{testimonial.text}}</p>
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <div class="author-info">
+                  <h5 class="author-name">{{testimonial.name}}</h5>
+                  <p class="author-role">{{testimonial.role}} • {{testimonial.company}}</p>
+                  <div class="project-tag">
+                    <i class="bi bi-briefcase me-1"></i> {{testimonial.project}}
+                  </div>
+                </div>
+              </div>
+              <div class="rating-stars">
+                <i *ngFor="let star of generateStars(testimonial.rating)" 
+                   class="bi bi-star-fill"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- All Testimonials Grid -->
+    <div class="testimonials-grid mb-5">
+      <h3 class="section-title mb-4">
+        <i class="bi bi-chat-square-quote me-2"></i>What People Say
+      </h3>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6" 
+             *ngFor="let testimonial of getFilteredTestimonials(); let i = index"
+             (mouseenter)="hoveredCard = i"
+             (mouseleave)="hoveredCard = null">
+          <div class="testimonial-card" [class.hovered]="hoveredCard === i">
+            <div class="card-header">
+              <div class="header-top">
+                <div class="author-avatar-small">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <div class="author-info-small">
+                  <h6 class="author-name">{{testimonial.name}}</h6>
+                  <p class="author-role">{{testimonial.role}}</p>
+                </div>
+                <div class="featured-badge" *ngIf="testimonial.featured">
+                  <i class="bi bi-star-fill"></i> Featured
+                </div>
+              </div>
+              <div class="rating">
+                <div class="stars">
+                  <i *ngFor="let star of generateStars(testimonial.rating)" 
+                     class="bi bi-star-fill"></i>
+                </div>
+                <span class="date">{{testimonial.date}}</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="testimonial-text">"{{testimonial.text}}"</p>
+              <div class="project-info">
+                <i class="bi bi-briefcase me-2"></i>
+                <span>{{testimonial.project}}</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="company-info">
+                <i class="bi bi-building me-1"></i> {{testimonial.company}}
+              </div>
+              <button class="view-btn" (click)="openTestimonialModal(testimonial)">
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section text-center py-5 mb-5">
+      <div class="cta-card p-5">
+        <h2 class="cta-title mb-3">Want to share your experience?</h2>
+        <p class="cta-text mb-4">
+          If we've worked together on a project or you've benefited from my YouTube tutorials, 
+          I'd love to hear your feedback!
+        </p>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn btn-primary btn-lg me-3">
+            <i class="bi bi-chat-left-text me-2"></i>Leave a Testimonial
+          </a>
+          <a href="https://youtube.com/largecoder" target="_blank" class="btn btn-outline-light btn-lg">
+            <i class="bi bi-youtube me-2"></i>Watch Tutorials
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust Indicators -->
+    <div class="trust-indicators py-4">
+      <h4 class="text-center mb-4 text-light">
+        <i class="bi bi-shield-check me-2"></i>Trusted By
+      </h4>
+      <div class="trust-logos d-flex flex-wrap justify-content-center align-items-center gap-5">
+        <div class="trust-logo">
+          <i class="bi bi-shop"></i>
+          <span>Retail Businesses</span>
+        </div>
+        <div class="trust-logo">
+          <i class="bi bi-building"></i>
+          <span>MSME Enterprises</span>
+        </div>
+        <div class="trust-logo">
+          <i class="bi bi-mortarboard"></i>
+          <span>Educational Institutions</span>
+        </div>
+        <div class="trust-logo">
+          <i class="bi bi-people"></i>
+          <span>Startups</span>
+        </div>
+        <div class="trust-logo">
+          <i class="bi bi-laptop"></i>
+          <span>Tech Companies</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonial Detail Modal -->
+<div class="modal fade" id="testimonialModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Testimonial Details</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Modal content will be dynamically inserted -->
+      </div>
+    </div>
+  </div>
+</div>

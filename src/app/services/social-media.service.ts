@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 export interface SocialMediaLink {
   platform: string;
   url: string;
@@ -190,4 +191,9 @@ export class SocialMediaService {
       console.error('Failed to copy: ', err);
     });
   }
+
+  // for downloading pdf
+ 
+
+
 }

@@ -3,6 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SocialMediaService } from '../../services/social-media.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-navbar',
@@ -14,11 +15,12 @@ import { SocialMediaService } from '../../services/social-media.service';
 export class NavbarComponent implements OnInit {
 
   constructor(private router: Router,
-    private socialMediaService: SocialMediaService
+    private socialMediaService: SocialMediaService,
+    private http: HttpClient
   ) {
     this.checkMobile();
     this.updateTime();
-    
+
     // Update active page based on route
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -50,7 +52,7 @@ export class NavbarComponent implements OnInit {
 
   // Enhanced sidebar items with categories
   sidebarItems = [
-    { 
+    {
       category: 'MAIN',
       items: [
         { id: 'home', label: 'Home', icon: 'bi-house', description: 'Welcome page' }
@@ -96,7 +98,7 @@ export class NavbarComponent implements OnInit {
     { id: 'purple', name: 'Purple', icon: 'bi-droplet', color: '#6c5ce7' }
   ];
 
-  
+
 
   ngOnInit() {
     this.checkMobile();
@@ -186,10 +188,22 @@ export class NavbarComponent implements OnInit {
 
   downloadCV() {
     // Implement CV download
-    console.log('Downloading CV...');
+     this.downloadPdf(`VIKASH NAGAR.pdf`);
   }
 
-   openWhatsApp() {
+   downloadPdf(fileName: string): void {
+  const filePath = `assets/pdfs/${fileName}`;
+
+  this.http.get(filePath, { responseType: 'blob' }).subscribe(blob => {
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    a.click();
+    window.URL.revokeObjectURL(url);
+  });
+}
+  openWhatsApp() {
     this.socialMediaService.openWhatsApp();
   }
 
